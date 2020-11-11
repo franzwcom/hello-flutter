@@ -15,13 +15,28 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
-      body: Center(
-          // child: Image.asset('assets/images/pomegranate.png'),
-          child: Image.network('https://picsum.photos/400')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+              color: Colors.blueAccent,
+              padding: EdgeInsets.all(20.0),
+              child: Text('text inside container')),
+          Container(
+              color: Colors.greenAccent,
+              padding: EdgeInsets.all(30.0),
+              child: Text('text inside container')),
+          Container(
+              color: Colors.yellowAccent,
+              padding: EdgeInsets.all(40.0),
+              child: Text('text inside container'))
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => true,
+        onPressed: () {},
         child: Text('press'),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
       ),
     );
   }
