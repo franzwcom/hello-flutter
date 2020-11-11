@@ -16,8 +16,8 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
       ),
       body: Center(
-        child: Image.asset('assets/images/pomegranate.png'),
-      ),
+          // child: Image.asset('assets/images/pomegranate.png'),
+          child: Image.network('https://picsum.photos/400')),
       floatingActionButton: FloatingActionButton(
         onPressed: () => true,
         child: Text('press'),
