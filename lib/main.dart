@@ -13,11 +13,20 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
-    Quote(author: 'vizcarra', text: 'ex president of peru'),
     Quote(
-        author: 'Srinivasa Ramanujan',
-        text: 'Srinivasa Ramanujan was an Indian mathematician'),
-    Quote(author: 'Donald trump', text: 'USA president')
+        author: 'Chris Pine',
+        text:
+            'Programming isn\'t about what you know; it\'s about what you can figure out.'),
+    Quote(
+        author: 'Dennis Ritchie',
+        text:
+            'The only way to learn a new programming language is by writing programs in it.'),
+    Quote(
+        author: 'Burt Rutan',
+        text: 'Testing leads to failure, and failure leads to understanding.'),
+    Quote(
+        author: 'Thomas Fuchs',
+        text: 'The best error message is the one that never shows up.')
   ];
 
   @override
@@ -29,13 +38,14 @@ class _QuoteListState extends State<QuoteList> {
           centerTitle: true,
           backgroundColor: Colors.redAccent,
         ),
-        body: Column(
+        body: SingleChildScrollView(
+            child: Column(
           children: quotes
               .map((quote) => QuoteCard(
                     quote: quote,
                     delete: () => setState(() => quotes.remove(quote)),
                   ))
               .toList(),
-        ));
+        )));
   }
 }
