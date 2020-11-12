@@ -4,7 +4,14 @@ var appName = "Franz G";
 var customImage = "https://picsum.photos/400";
 void main() => runApp(MaterialApp(home: Home()));
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int levelMe = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +23,14 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => setState(() => levelMe += 1),
+        child: Icon(
+          Icons.add,
+          color: Colors.blue,
+        ),
+        backgroundColor: Colors.yellowAccent,
       ),
       body: Padding(
           padding: EdgeInsets.all(20.0),
@@ -45,20 +60,24 @@ class Home extends StatelessWidget {
                     fontFamily: "Nunito",
                     letterSpacing: 2.0),
               ),
+              SizedBox(height: 40),
+              Text(
+                'level',
+                style: TextStyle(
+                    color: Colors.white, fontSize: 14.0, letterSpacing: 2.0),
+              ),
+              SizedBox(height: 10),
+              Text(
+                '$levelMe',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Nunito",
+                    letterSpacing: 2.0),
+              ),
             ],
           )),
     );
-  }
-}
-
-class Hola extends StatefulWidget {
-  @override
-  _HolaState createState() => _HolaState();
-}
-
-class _HolaState extends State<Hola> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
