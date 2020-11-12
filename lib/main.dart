@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'quote.dart';
+import 'quoteClass.dart';
 import 'quoteCard.dart';
 
 var appName = "Chuck Norries jokes";
