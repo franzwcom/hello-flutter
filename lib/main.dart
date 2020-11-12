@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'quoteClass.dart';
 import 'quoteCard.dart';
 
-var appName = "Chuck Norries jokes";
+var appName = "Programming quotes";
 var customImage = "https://picsum.photos/400";
 void main() => runApp(MaterialApp(home: QuoteList()));
 
